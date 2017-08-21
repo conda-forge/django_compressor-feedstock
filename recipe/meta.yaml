@@ -1,6 +1,6 @@
 {% set name = "django_compressor" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "9200400046ee00a5c1b4e2fbab97704fd2514f9b59d5649c8a365c3cf06c82e8" %}
+{% set version = "2.2" %}
+{% set sha256 = "9616570e5b08e92fa9eadc7a1b1b49639cce07ef392fc27c74230ab08075b30f" %}
 
 package:
   name: {{ name|lower }}
