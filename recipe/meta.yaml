@@ -1,6 +1,6 @@
 {% set name = "django_compressor" %}
-{% set version = "2.2" %}
-{% set sha256 = "9616570e5b08e92fa9eadc7a1b1b49639cce07ef392fc27c74230ab08075b30f" %}
+{% set version = "2.3" %}
+{% set sha256 = "47c86347f75c64954a06afbbfc820a750619e10c23a49272b865020a407b7edd" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
