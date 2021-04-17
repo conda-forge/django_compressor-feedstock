@@ -1,6 +1,6 @@
 {% set name = "django_compressor" %}
-{% set version = "2.3" %}
-{% set sha256 = "47c86347f75c64954a06afbbfc820a750619e10c23a49272b865020a407b7edd" %}
+{% set version = "2.4.1" %}
+{% set sha256 = "3358077605c146fdcca5f9eaffb50aa5dbe15f238f8854679115ebf31c0415e0" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -33,11 +33,8 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Compresses linked and inline javascript or CSS into a single cached file.'
-  description:
-    Django Compressor processes, combines and minifies linked and inline Javascript or CSS in a Django template into 
-    cacheable static files. It supports compilers such as coffeescript, LESS and SASS and is extensible by custom 
-    processing steps. Django Compressor is compatible with Django 1.8 and newer.
+  summary: Compresses linked and inline javascript or CSS into a single cached file.
+  description: Django Compressor processes, combines and minifies linked and inline Javascript or CSS in a Django template into cacheable static files. It supports compilers such as coffeescript, LESS and SASS and is extensible by custom processing steps. Django Compressor is compatible with Django 1.8 and newer.
   doc_url: https://django-compressor.readthedocs.io/en/latest/
   dev_url: https://github.com/django-compressor/django-compressor
 
