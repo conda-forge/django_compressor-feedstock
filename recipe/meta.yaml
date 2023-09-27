@@ -1,32 +1,36 @@
-{% set name = "django_compressor" %}
-{% set version = "2.3" %}
-{% set sha256 = "47c86347f75c64954a06afbbfc820a750619e10c23a49272b865020a407b7edd" %}
+{% set name = "django-compressor" %}
+{% set version = "4.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_compressor-{{ version }}.tar.gz
+  sha256: 1b0acc9cfba9f69bc38e7c41da9b0d70a20bc95587b643ffef9609cf46064f67
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
+    - python >=3.8
     - pip
-    - python
-    - setuptools
   run:
-    - python
-    - django >=1.8
-    - django-appconf >=1.0
-    - rcssmin ==1.0.6
-    - rjsmin ==1.0.12
+    - python >=3.8
+    - django-appconf >=1.0.3
+    - rcssmin ==1.1.1
+    - rjsmin ==1.2.1
+
+test:
+  imports:
+    - compressor
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/django-compressor/django-compressor
@@ -45,3 +49,4 @@ extra:
   recipe-maintainers:
     - cshaley
     - sannykr
+    - rxm7706

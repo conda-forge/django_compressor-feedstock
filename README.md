@@ -1,13 +1,17 @@
-About django_compressor
-=======================
+About django-compressor-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/django_compressor-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/django-compressor/django-compressor
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
-
 Summary: Compresses linked and inline javascript or CSS into a single cached file.
+
+Development: https://github.com/django-compressor/django-compressor
+
+Documentation: https://django-compressor.readthedocs.io/en/latest/
 
 Django Compressor processes, combines and minifies linked and inline Javascript or CSS in a Django template into cacheable static files. It supports compilers such as coffeescript, LESS and SASS and is extensible by custom processing steps. Django Compressor is compatible with Django 1.8 and newer.
 
@@ -15,12 +19,10 @@ Current build status
 ====================
 
 
-<table><tr>
-    
-    <td>All platforms:</td>
+<table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3868&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/django_compressor-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3868&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/django_compressor-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -31,34 +33,61 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-django_compressor-green.svg)](https://anaconda.org/conda-forge/django_compressor) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/django_compressor.svg)](https://anaconda.org/conda-forge/django_compressor) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/django_compressor.svg)](https://anaconda.org/conda-forge/django_compressor) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/django_compressor.svg)](https://anaconda.org/conda-forge/django_compressor) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-django--compressor-green.svg)](https://anaconda.org/conda-forge/django-compressor) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/django-compressor.svg)](https://anaconda.org/conda-forge/django-compressor) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/django-compressor.svg)](https://anaconda.org/conda-forge/django-compressor) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/django-compressor.svg)](https://anaconda.org/conda-forge/django-compressor) |
 
-Installing django_compressor
+Installing django-compressor
 ============================
 
-Installing `django_compressor` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `django-compressor` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `django_compressor` can be installed with:
+Once the `conda-forge` channel has been enabled, `django-compressor` can be installed with `conda`:
 
 ```
-conda install django_compressor
+conda install django-compressor
 ```
 
-It is possible to list all of the versions of `django_compressor` available on your platform with:
+or with `mamba`:
 
 ```
-conda search django_compressor --channel conda-forge
+mamba install django-compressor
+```
+
+It is possible to list all of the versions of `django-compressor` available on your platform with `conda`:
+
+```
+conda search django-compressor --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search django-compressor --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search django-compressor --channel conda-forge
+
+# List packages depending on `django-compressor`:
+mamba repoquery whoneeds django-compressor --channel conda-forge
+
+# List dependencies of `django-compressor`:
+mamba repoquery depends django-compressor --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -68,10 +97,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
@@ -93,31 +124,32 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating django_compressor-feedstock
+Updating django-compressor-feedstock
 ====================================
 
-If you would like to improve the django_compressor recipe or build a new
+If you would like to improve the django-compressor recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/django_compressor-feedstock are
+Note that all branches in the conda-forge/django-compressor-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
 =====================
 
 * [@cshaley](https://github.com/cshaley/)
+* [@rxm7706](https://github.com/rxm7706/)
 * [@sannykr](https://github.com/sannykr/)
 
