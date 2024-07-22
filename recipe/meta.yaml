@@ -1,5 +1,5 @@
 {% set name = "django-compressor" %}
-{% set version = "4.5" %}
+{% set version = "4.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_compressor-{{ version }}.tar.gz
-  sha256: 9d98c905b741be6cb09ad828c1d22a9ff9244dd08823e2926af8ddd1871c3c65
+  sha256: c1d8a48a2ee4d8b7f23c411eb9c97e2d88db18a18ba1c9e8178d5f5b8366a822
 
 build:
   noarch: python
