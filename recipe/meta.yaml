@@ -1,13 +1,13 @@
 {% set name = "django-compressor" %}
-{% set version = "4.5.1" %}
+{% set version = "4.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_compressor-{{ version }}.tar.gz
-  sha256: c1d8a48a2ee4d8b7f23c411eb9c97e2d88db18a18ba1c9e8178d5f5b8366a822
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django_compressor-{{ version }}.tar.gz
+  sha256: c7478feab98f3368780591f9ee28a433350f5277dd28811f7f710f5bc6dff3c0
 
 build:
   noarch: python
@@ -22,8 +22,8 @@ requirements:
     - python >=3.8
     - django >=4.2
     - django-appconf >=1.0.3
-    - rcssmin ==1.1.2
-    - rjsmin ==1.2.2
+    - rcssmin >=1.2.1
+    - rjsmin >=1.2.4
 
 test:
   imports:
