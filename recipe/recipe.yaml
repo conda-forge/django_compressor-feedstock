@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "4.6.0"
+  version: 4.7.0
 
 package:
   name: django-compressor
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/django-compressor/django_compressor-${{ version }}.tar.gz
-  sha256: c7478feab98f3368780591f9ee28a433350f5277dd28811f7f710f5bc6dff3c0
+  sha256: c9fd24ef08c0525a9f65241d3b3154c0824d77e2de5e1d9d213b94496d0f4e03
 
 build:
   number: 0
@@ -24,11 +24,10 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - django >=4.2
+    - django >=5.2
     - django-appconf >=1.0.3
     - rcssmin >=1.2.1
     - rjsmin >=1.2.4
-
 tests:
   - python:
       imports:
@@ -36,7 +35,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   homepage: https://pypi.org/project/django-compressor
